@@ -53,9 +53,10 @@ datas = [
 
 datas.each do |data|
   Team.create!(
-    name: data[0],
-    short_name: data[1],
-    screen_name: data[2],
-    twitter_user_id: data[3]
+    league: data[0],
+    name: data[1],
+    short_name: data[2],
+    screen_name: data[3],
+    twitter_user_id: data[4]
   )
 end
