@@ -1,0 +1,32 @@
+.container
+  %p 毎日AM1:00に自動集計しています。
+
+%table.table.table-striped.table-hover.table-bordered.table-sm.table-layout-fixed
+  %thead.table-light
+    %tr.text-center
+      %th Team
+      %th Followers
+      %th up / down
+  %tbody
+    - @teams.each do |team|
+      - today_and_yesterday_follower_count = team.today_and_yesterday_follower_count
+      %tr
+        %td.px-2.d-flex
+          %div= team.short_name
+          %div.ms-auto
+            :ruby
+              badge_class = case team.league
+                            when 'B1'
+                              'bg-danger'
+                            when 'B2'
+                              'bg-warning'
+                            when 'B3'
+                              'bg-primary'
+                            end
+            %span.badge.text-small{ class: badge_class }= team.league
+        %td.ps-2= number_with_delimiter today_and_yesterday_follower_count[:today]
+        %td.ps-2= format_math_sign(today_and_yesterday_follower_count[:today] - today_and_yesterday_follower_count[:yesterday])
+
+.container
+  .last-updated
+    last updated : #{FollowerCount.order(created_at: :desc).first.created_at.strftime("%F %R")}

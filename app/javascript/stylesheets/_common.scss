@@ -1,0 +1,16 @@
+body {
+  font-size: 14px;
+  font-family: 'Lato', 'M PLUS Rounded 1c', 'ヒラギノ角ゴ ProN', 'Hiragino Kaku Gothic ProN', 'メイリオ', Meiryo, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;
+}
+
+a {
+  color: $body-color;
+}
+
+.table-layout-fixed {
+  table-layout: fixed;
+}
+
+.text-small {
+  font-size: 10px;
+}
