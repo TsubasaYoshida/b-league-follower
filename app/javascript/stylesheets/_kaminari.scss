@@ -1,0 +1,32 @@
+.pagination {
+  display: flex;
+}
+
+$page-size: 25px;
+
+.page, .first, .prev, .next, .last {
+  font-weight: bold;
+  font-size: 14px;
+  margin: 1px;
+  width: $page-size;
+  height: $page-size;
+  line-height: $page-size;
+  text-align: center;
+  border-bottom: solid 3px #1e90ff;
+  a {
+    display: block;
+    text-decoration: none;
+  }
+  a:hover {
+    color: #FFF;
+    background-color: #666;
+  }
+}
+
+.first, .prev, .next, .last, .gap {
+  border-bottom: solid 3px #666;
+}
+
+.current {
+  border-bottom: solid 3px #B00100;
+}

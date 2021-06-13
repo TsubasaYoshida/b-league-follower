@@ -9,4 +9,9 @@ class TeamsController < ApplicationController
                  .where('follower_counts.created_at': today_or_yesterday)
                  .order('follower_counts.count': :desc)
   end
+
+  def show
+    @team = Team.find(params[:id])
+    @follower_counts = @team.follower_counts.page(params[:page]).order(created_at: :desc)
+  end
 end

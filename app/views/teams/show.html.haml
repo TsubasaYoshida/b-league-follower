@@ -1,0 +1,25 @@
+.container.mb-3
+  %h1.team-name= @team.name
+  %div
+    %span Followers :
+    %span.follower-count= number_with_delimiter(@team.follower_counts.order(created_at: :desc).first.count)
+  %div
+    %span 直近10日間の増減 :
+    %span.last-ten-days-updown= format_math_sign(@team.updown_last_ten_days)
+
+.container.px-0.px-sm-3
+  %table.table.table-striped.table-hover.table-bordered.table-sm.table-layout-fixed.text-center
+    %thead.table-light
+      %tr
+        %th Date
+        %th Followers
+        %th up / down
+    %tbody
+      - @follower_counts.each do |follower_count|
+        %tr
+          %td= follower_count.created_at.strftime("%y-%m-%d")
+          %td= follower_count.count
+          %td= format_math_sign(follower_count.difference_from_previous_day)
+
+.container
+  = paginate @follower_counts, window: 2
