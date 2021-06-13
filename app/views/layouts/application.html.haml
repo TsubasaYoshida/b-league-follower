@@ -17,5 +17,8 @@
         .container
           = link_to 'B.LEAGUE FOLLOWER', root_path, class: 'navbar-brand'
     = yield
-    %footer.border-top.my-5.pt-2.text-center
-      B.LEAGUE FOLLOWER
+    %footer.border-top.my-5.pt-2
+      .container
+        %details
+          %summary 表示データの期間について
+          ※ 都合上、画面では6ヶ月分のデータしか表示できません。全てのデータは今後実装予定の「CSVダウンロードボタン」からCSVファイルをダウンロードしてご確認ください。
