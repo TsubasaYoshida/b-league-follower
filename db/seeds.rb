@@ -49,6 +49,7 @@ datas = [
   %w[B3 豊田合成スコーピオンズ 豊田合成 tg_scorpions 443375101],
   %w[B3 トライフープ岡山 岡山 tryhoop_okayama 2388296246],
   %w[B3 鹿児島レブナイズ 鹿児島 kg_rebnise 169922118],
+  %w[B3 山口ペイトリオッツ 山口 yamaguchipats 1289171410955378688],
 ]
 
 datas.each do |data|
